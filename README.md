@@ -78,7 +78,7 @@ python manage.py test employees.tests.test_api_import
 
 - отчёт, включающий количество созданных записей и список ошибок.
 
-Пример отчёта в json:
+```Пример отчёта в json:
 {
   "created": 2,
   "errors_count": 1,
