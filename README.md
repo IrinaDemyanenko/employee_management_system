@@ -17,6 +17,19 @@ poetry shell
 ```
 cd backend
 ```
+После клонирования проекта база данных ещё не создана —
+её необходимо подготовить вручную перед запуском сервера.
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+Создайте суперпользователя
+```
+python manage.py createsuperuser
+```
+
 Запустите сервер разработчика
 ```
 python manage.py runserver
