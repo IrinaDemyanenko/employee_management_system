@@ -25,4 +25,8 @@ class Worker(models.Model):
         ordering = ["-hired_date"]
 
     def __str__(self):
-        return f"{self.last_name} {self.first_name}"
+        return f"""
+    ФИО: {self.last_name} {self.middle_name} {self.first_name},
+    Должность: {self.position},
+    Создан: {self.created_by}
+    """

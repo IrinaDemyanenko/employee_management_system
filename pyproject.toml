@@ -6,7 +6,7 @@ authors = [
     {name = "Ирина Демьяненко",email = "idemyanenko5@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<4.0"
 dependencies = [
     "django (==4.2.*)",
     "djangorestframework (==3.*)",
@@ -27,5 +27,6 @@ package-mode = false
 [dependency-groups]
 dev = [
     "django-stubs (>=5.2.7,<6.0.0)",
-    "djangorestframework-stubs (>=3.16.4,<4.0.0)"
+    "djangorestframework-stubs (>=3.16.4,<4.0.0)",
+    "wemake-python-styleguide (>=1.4.0,<2.0.0)"
 ]

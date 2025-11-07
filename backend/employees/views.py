@@ -20,7 +20,7 @@ class WorkerViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['is_active', 'position']
-    search_fields = ['first_name', 'last_name', 'email']
+    search_fields = ['first_name', 'last_name', 'middle_name', 'email', 'position']
 
     def get_serializer_class(self):
         if self.action == 'list':
@@ -30,6 +30,6 @@ class WorkerViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         worker = serializer.save(created_by=self.request.user)
         print(
-            f'Создан работник: {worker.first_name} {worker.last_name}, '
+            f'Создан работник: {worker.last_name} {worker.first_name} {worker.middle_name}, '
             f'{worker.email}) пользователем {self.request.user}'
             )

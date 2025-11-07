@@ -7,11 +7,13 @@ class WorkerAdmin(admin.ModelAdmin):
     """Регулирует отображение модели Worker в админ-панели."""
 
     list_display = (
-        'id', 'last_name', 'first_name', 'email',
-        'position', 'is_active', 'hired_date'
+        'id', 'last_name', 'first_name', 'middle_name',
+        'email', 'position', 'is_active', 'hired_date'
         )
     list_filter = ('is_active', 'position', 'hired_date')
-    search_fields = ('first_name', 'last_name', 'email', 'position')
+    search_fields = (
+        'first_name', 'last_name', 'middle_name', 'email', 'position'
+        )
     list_editable = ('is_active',)
     readonly_fields = ('hired_date', 'updated', 'created_by')
 

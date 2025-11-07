@@ -1,0 +1,62 @@
+# мягкие правила
+[flake8]
+max-line-length = 100
+max-complexity = 12
+select = C,E,F,W,B,B9,WPS
+ignore =
+    # Django settings and migrations
+    WPS407, WPS432, WPS201, WPS221, WPS226, WPS237,
+    # readability & practical things
+    WPS111, WPS305, WPS306, WPS323, WPS420, WPS430,
+    # formatting and docs
+    D100, D101, D102, D103, D104, D105, D106, D107,
+    E203, E501
+per-file-ignores =
+    manage.py: WPS305, WPS412, WPS432
+    */migrations/*: D, WPS, E501
+
+
+; # строгие правила
+; [flake8]
+; # Базовые настройки
+; max-line-length = 88
+; max-complexity = 10
+; select = C,E,F,W,B,B9,WPS
+; ignore =
+;     WPS305,
+;     WPS306,
+;     WPS110,
+;     WPS115,
+;     WPS202,
+;     WPS226,
+;     WPS231,
+;     WPS238,
+;     WPS305,
+;     WPS306,
+;     WPS323,
+;     WPS420,
+;     WPS430,
+;     WPS432,
+;     D100, D101, D102, D103, D104, D105, D106, D107,
+; per-file-ignores =
+;     # Разрешаем более свободный стиль в настройках и manage.py
+;     manage.py: WPS412, WPS432, WPS305
+;     */migrations/*: D, WPS, E501
+
+# Плагины wemake-python-styleguide
+# Они подключаются автоматически, если установлен пакет
+    ; WPS305,  # f-string — разрешаем
+    ; WPS306,  # allow class methods with self/cls
+    ; WPS110,  # common variable names like `data`
+    ; WPS115,  # allow non-lowercase constants
+    ; WPS202,  # allow many methods in classes
+    ; WPS226,  # allow string concatenation
+    ; WPS231,  # allow many arguments in functions
+    ; WPS238,  # allow complex f-strings
+    ; WPS305,  # allow f-strings
+    ; WPS306,  # allow `staticmethod`
+    ; WPS323,  # allow multiline strings
+    ; WPS420,  # allow `lambda`
+    ; WPS430,  # allow nested functions
+    ; WPS432,  # allow magic numbers
+    ; D100, D101, D102, D103, D104, D105, D106, D107,  # отключаем docstring-обязательность
